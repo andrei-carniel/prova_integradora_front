@@ -1,0 +1,20 @@
+.input-body{
+    border-bottom: 2px solid #D9D9D9;
+    width: auto;
+}
+
+.input-body input{
+    border: none;
+    background-color: transparent;
+    margin-left: .7rem;
+}
+
+.input-body input::placeholder{
+    color: #D9D9D9;
+}
+
+.input-body button{
+    border: none;
+    color: #D9D9D9;
+    background-color: transparent;
+}

@@ -1,0 +1,405 @@
+{
+  "perguntas": [
+    {
+      "categoria": "Redes",
+      "pergunta": "Qual o principal protocolo utilizado na camada de transporte para garantir a entrega confiável de dados?",
+      "respostas": [
+        {"texto": "UDP", "correta": false},
+        {"texto": "IP", "correta": false},
+        {"texto": "TCP", "correta": true},
+        {"texto": "ARP", "correta": false}
+      ]
+    },
+    {
+      "categoria": "Redes",
+      "pergunta": "O que é um endereço MAC?",
+      "respostas": [
+        {"texto": "Um endereço lógico atribuído pelo protocolo IP.", "correta": false},
+        {"texto": "Um endereço físico único atribuído a cada placa de rede.", "correta": true},
+        {"texto": "Um endereço de e-mail.", "correta": false},
+        {"texto": "Um endereço de website.", "correta": false}
+      ]
+    },
+    {
+      "categoria": "Redes",
+      "pergunta": "Qual das seguintes opções descreve melhor a função de um roteador?",
+      "respostas": [
+        {"texto": "Conectar dispositivos em uma mesma rede local.", "correta": false},
+        {"texto": "Converter sinais analógicos em digitais.", "correta": false},
+        {"texto": "Direcionar o tráfego de rede entre diferentes redes.", "correta": true},
+        {"texto": "Amplificar o sinal de rede.", "correta": false}
+      ]
+    },
+    {
+      "categoria": "Redes",
+      "pergunta": "O que significa a sigla DNS?",
+      "respostas": [
+        {"texto": "Dynamic Network System", "correta": false},
+        {"texto": "Domain Name System", "correta": true},
+        {"texto": "Data Network Security", "correta": false},
+        {"texto": "Digital Number Service", "correta": false}
+      ]
+    },
+    {
+      "categoria": "Redes",
+      "pergunta": "Qual a função do protocolo DHCP?",
+      "respostas": [
+        {"texto": "Atribuir dinamicamente endereços IP aos dispositivos em uma rede.", "correta": true},
+        {"texto": "Criptografar dados transmitidos pela rede.", "correta": false},
+        {"texto": "Monitorar o tráfego de rede.", "correta": false},
+        {"texto": "Converter endereços IP em endereços MAC.", "correta": false}
+      ]
+    },
+    {
+      "categoria": "Redes",
+      "pergunta": "O que é uma VLAN?",
+      "respostas": [
+        {"texto": "Um tipo de cabo de rede.", "correta": false},
+        {"texto": "Uma rede local virtualmente segmentada.", "correta": true},
+        {"texto": "Um software de firewall.", "correta": false},
+        {"texto": "Um protocolo de roteamento.", "correta": false}
+      ]
+    },
+    {
+      "categoria": "Redes",
+      "pergunta": "Qual o propósito de um firewall?",
+      "respostas": [
+        {"texto": "Conectar redes diferentes.", "correta": false},
+        {"texto": "Proteger uma rede contra acessos não autorizados.", "correta": true},
+        {"texto": "Acelerar a velocidade da internet.", "correta": false},
+        {"texto": "Gerenciar endereços IP.", "correta": false}
+      ]
+    },
+    {
+      "categoria": "Redes",
+      "pergunta": "Qual das seguintes opções representa um endereço IP válido na notação IPv4?",
+      "respostas": [
+        {"texto": "260.10.5.256", "correta": false},
+        {"texto": "192.168.1.300", "correta": false},
+        {"texto": "10.0.0.1", "correta": true},
+        {"texto": "300.10.1.1", "correta": false}
+      ]
+    },
+    {
+      "categoria": "Redes",
+      "pergunta": "Qual protocolo é usado para enviar e-mails?",
+      "respostas": [
+        {"texto": "FTP", "correta": false},
+        {"texto": "SMTP", "correta": true},
+        {"texto": "HTTP", "correta": false},
+        {"texto": "SSH", "correta": false}
+      ]
+    },
+    {
+      "categoria": "Redes",
+      "pergunta": "O que é NAT (Network Address Translation)?",
+      "respostas": [
+        {"texto": "Um protocolo para criptografar dados.", "correta": false},
+        {"texto": "Um método para traduzir endereços IP privados em um endereço IP público.", "correta": true},
+        {"texto": "Um tipo de cabo de rede.", "correta": false},
+        {"texto": "Um sistema de detecção de intrusão.", "correta": false}
+      ]
+    },
+    {
+      "categoria": "POO (Java)",
+      "pergunta": "Qual dos seguintes conceitos é um pilar da Programação Orientada a Objetos (POO)?",
+      "respostas": [
+        {"texto": "Herança", "correta": true},
+        {"texto": "Programação Linear", "correta": false},
+        {"texto": "Programação Estruturada", "correta": false},
+        {"texto": "Decomposição Funcional", "correta": false}
+      ]
+    },
+    {
+      "categoria": "POO (Java)",
+      "pergunta": "O que é uma classe em Java?",
+      "respostas": [
+        {"texto": "Uma instância de um objeto.", "correta": false},
+        {"texto": "Um modelo ou planta para criar objetos.", "correta": true},
+        {"texto": "Um tipo de dado primitivo.", "correta": false},
+        {"texto": "Uma biblioteca de funções pré-definidas.", "correta": false}
+      ]
+    },
+    {
+      "categoria": "POO (Java)",
+      "pergunta": "Qual a finalidade do modificador de acesso 'private' em Java?",
+      "respostas": [
+        {"texto": "Tornar um atributo ou método acessível de qualquer lugar.", "correta": false},
+        {"texto": "Tornar um atributo ou método acessível apenas dentro da própria classe.", "correta": true},
+        {"texto": "Tornar um atributo ou método acessível apenas dentro do mesmo pacote.", "correta": false},
+        {"texto": "Tornar um atributo ou método acessível apenas para subclasses.", "correta": false}
+      ]
+    },
+    {
+      "categoria": "POO (Java)",
+      "pergunta": "O que é polimorfismo?",
+      "respostas": [
+        {"texto": "A capacidade de uma classe herdar de múltiplas classes.", "correta": false},
+        {"texto": "A capacidade de um objeto assumir diferentes formas.", "correta": true},
+        {"texto": "A capacidade de uma classe conter apenas um método.", "correta": false},
+        {"texto": "A capacidade de um método ser estático.", "correta": false}
+      ]
+    },
+    {
+      "categoria": "POO (Java)",
+      "pergunta": "Qual a função da palavra-chave 'super' em Java?",
+      "respostas": [
+        {"texto": "Criar uma nova instância de uma classe.", "correta": false},
+        {"texto": "Referenciar a classe pai (superclasse).", "correta": true},
+        {"texto": "Finalizar a execução de um método.", "correta": false},
+        {"texto": "Definir um método como estático.", "correta": false}
+      ]
+    },
+    {
+      "categoria": "POO (Java)",
+      "pergunta": "O que é uma interface em Java?",
+      "respostas": [
+        {"texto": "Uma classe que não pode ser instanciada.", "correta": false},
+        {"texto": "Um contrato que define um conjunto de métodos que uma classe deve implementar.", "correta": true},
+        {"texto": "Um tipo de dado primitivo.", "correta": false},
+        {"texto": "Uma forma de herança múltipla.", "correta": false}
+      ]
+    },
+    {
+      "categoria": "POO (Java)",
+      "pergunta": "Qual a diferença entre '==' e '.equals()' em Java?",
+      "respostas": [
+        {"texto": "'==' compara o conteúdo de dois objetos, enquanto '.equals()' compara a referência dos objetos.", "correta": false},
+        {"texto": "'==' compara a referência dos objetos, enquanto '.equals()' compara o conteúdo dos objetos.", "correta": true},
+        {"texto": "Ambos comparam a referência dos objetos.", "correta": false},
+        {"texto": "Ambos comparam o conteúdo dos objetos.", "correta": false}
+      ]
+    },
+    {
+      "categoria": "POO (Java)",
+      "pergunta": "O que é um construtor em Java?",
+      "respostas": [
+        {"texto": "Um método que é chamado automaticamente quando um objeto é criado.", "correta": true},
+        {"texto": "Um método que destrói um objeto.", "correta": false},
+        {"texto": "Um tipo de dado primitivo.", "correta": false},
+        {"texto": "Uma classe abstrata.", "correta": false}
+      ]
+    },
+    {
+      "categoria": "POO (Java)",
+      "pergunta": "O que significa 'encapsulamento' em POO?",
+      "respostas": [
+        {"texto": "Ocultar os detalhes de implementação de um objeto e expor apenas uma interface.", "correta": true},
+        {"texto": "Criar múltiplas instâncias de uma classe.", "correta": false},
+        {"texto": "Definir um método como estático.", "correta": false},
+        {"texto": "Herdar de múltiplas classes.", "correta": false}
+      ]
+    },
+    {
+      "categoria": "POO (Java)",
+      "pergunta": "Qual a finalidade da palavra-chave 'static' em Java?",
+      "respostas": [
+        {"texto": "Definir uma constante.", "correta": false},
+        {"texto": "Associar um atributo ou método à classe, em vez de a uma instância da classe.", "correta": true},
+        {"texto": "Tornar um método abstrato.", "correta": false},
+        {"texto": "Impedir que uma classe seja herdada.", "correta": false}
+      ]
+    },
+    {
+      "categoria": "Requisitos de Software",
+      "pergunta": "O que são requisitos não funcionais?",
+      "respostas": [
+        {"texto": "Requisitos que descrevem o que o software deve fazer.", "correta": false},
+        {"texto": "Requisitos que descrevem como o software deve funcionar, como desempenho, segurança e usabilidade.", "correta": true},
+        {"texto": "Requisitos relacionados à documentação do software.", "correta": false},
+        {"texto": "Requisitos relacionados ao hardware necessário para executar o software.", "correta": false}
+      ]
+    },
+    {
+      "categoria": "Requisitos de Software",
+      "pergunta": "Qual a importância da elicitação de requisitos?",
+      "respostas": [
+        {"texto": "Garantir que o software seja entregue no prazo.", "correta": false},
+        {"texto": "Entender as necessidades dos stakeholders e definir os requisitos do sistema.", "correta": true},
+        {"texto": "Definir a arquitetura do software.", "correta": false},
+        {"texto": "Implementar o código do software.", "correta": false}
+      ]
+    },
+    {
+      "categoria": "Requisitos de Software",
+      "pergunta": "O que é um caso de uso?",
+      "respostas": [
+        {"texto": "Um diagrama que representa a arquitetura do sistema.", "correta": false},
+        {"texto": "Uma descrição de como um usuário interage com o sistema para atingir um objetivo.", "correta": true},
+        {"texto": "Um documento que descreve os requisitos não funcionais.", "correta": false},
+        {"texto": "Um teste automatizado para verificar a funcionalidade do sistema.", "correta": false}
+      ]
+    },
+    {
+      "categoria": "Requisitos de Software",
+      "pergunta": "O que é rastreabilidade de requisitos?",
+      "respostas": [
+        {"texto": "A capacidade de verificar se os requisitos foram implementados corretamente.", "correta": true},
+        {"texto": "A capacidade de estimar o custo do desenvolvimento do software.", "correta": false},
+        {"texto": "A capacidade de gerenciar as mudanças nos requisitos.", "correta": false},
+        {"texto": "A capacidade de documentar os requisitos de forma clara e concisa.", "correta": false}
+      ]
+    },
+    {
+      "categoria": "Requisitos de Software",
+      "pergunta": "Qual a diferença entre requisitos funcionais e não funcionais?",
+      "respostas": [
+        {"texto": "Requisitos funcionais descrevem o 'como', enquanto os não funcionais descrevem o 'o que'.", "correta": false},
+        {"texto": "Requisitos funcionais descrevem o 'o que', enquanto os não funcionais descrevem o 'como'.", "correta": true},
+        {"texto": "Requisitos funcionais são mais importantes que os não funcionais.", "correta": false},
+        {"texto": "Não há diferença significativa entre eles.", "correta": false}
+      ]
+    },
+    {
+      "categoria": "Requisitos de Software",
+      "pergunta": "O que é um protótipo de software?",
+      "respostas": [
+        {"texto": "A versão final do software.", "correta": false},
+        {"texto": "Uma versão inicial do software usada para validar os requisitos e o design.", "correta": true},
+        {"texto": "Um documento que descreve a arquitetura do software.", "correta": false},
+        {"texto": "Um conjunto de testes automatizados.", "correta": false}
+      ]
+    },
+    {
+      "categoria": "Requisitos de Software",
+      "pergunta": "O que é um backlog de produto?",
+      "respostas": [
+        {"texto": "Uma lista de todos os defeitos encontrados no software.", "correta": false},
+        {"texto": "Uma lista priorizada de funcionalidades e requisitos que precisam ser implementados no software.", "correta": true},
+        {"texto": "Um documento que descreve os requisitos não funcionais.", "correta": false},
+        {"texto": "Um diagrama que representa a arquitetura do software.", "correta": false}
+      ]
+    },
+    {
+      "categoria": "Requisitos de Software",
+      "pergunta": "O que é análise de viabilidade?",
+      "respostas": [
+        {"texto": "A avaliação da probabilidade de sucesso do projeto, considerando fatores técnicos, econômicos e operacionais.", "correta": true},
+        {"texto": "A definição dos casos de teste para o software.", "correta": false},
+        {"texto": "A documentação dos requisitos do software.", "correta": false},
+        {"texto": "A implementação do código do software.", "correta": false}
+      ]
+    },
+    {
+      "categoria": "Requisitos de Software",
+      "pergunta": "O que é validação de requisitos?",
+      "respostas": [
+        {"texto": "O processo de verificar se os requisitos estão corretos e completos.", "correta": true},
+        {"texto": "O processo de garantir que o software seja entregue no prazo.", "correta": false},
+        {"texto": "O processo de definir a arquitetura do software.", "correta": false},
+        {"texto": "O processo de implementar o código do software.", "correta": false}
+      ]
+    },
+    {
+      "categoria": "Requisitos de Software",
+      "pergunta": "Qual a importância de envolver os stakeholders no processo de requisitos?",
+      "respostas": [
+        {"texto": "Garantir que o software atenda às necessidades dos usuários e stakeholders.", "correta": true},
+        {"texto": "Reduzir o custo do desenvolvimento do software.", "correta": false},
+        {"texto": "Acelerar o processo de desenvolvimento do software.", "correta": false},
+        {"texto": "Simplificar a documentação dos requisitos.", "correta": false}
+      ]
+    },
+    {
+      "categoria": "Estrutura de Dados",
+      "pergunta": "Qual das seguintes estruturas de dados segue o princípio LIFO (Last-In, First-Out)?",
+      "respostas": [
+        {"texto": "Fila", "correta": false},
+        {"texto": "Pilha", "correta": true},
+        {"texto": "Lista Encadeada", "correta": false},
+        {"texto": "Árvore Binária", "correta": false}
+      ]
+    },
+    {
+      "categoria": "Estrutura de Dados",
+      "pergunta": "O que é uma lista encadeada?",
+      "respostas": [
+        {"texto": "Uma estrutura de dados que armazena elementos em posições contíguas de memória.", "correta": false},
+        {"texto": "Uma estrutura de dados que armazena elementos em nós, onde cada nó contém um elemento e um ponteiro para o próximo nó.", "correta": true},
+        {"texto": "Uma estrutura de dados que armazena elementos em uma árvore hierárquica.", "correta": false},
+        {"texto": "Uma estrutura de dados que armazena elementos em pares chave-valor.", "correta": false}
+      ]
+    },
+    {
+      "categoria": "Estrutura de Dados",
+      "pergunta": "Qual a complexidade de tempo para buscar um elemento em um array ordenado utilizando busca binária?",
+      "respostas": [
+        {"texto": "O(n)", "correta": false},
+        {"texto": "O(log n)", "correta": true},
+        {"texto": "O(n^2)", "correta": false},
+        {"texto": "O(1)", "correta": false}
+      ]
+    },
+    {
+      "categoria": "Estrutura de Dados",
+      "pergunta": "O que é uma árvore binária de busca (BST)?",
+      "respostas": [
+        {"texto": "Uma árvore onde cada nó tem no máximo um filho.", "correta": false},
+        {"texto": "Uma árvore onde cada nó tem no máximo dois filhos e os nós à esquerda são menores que o nó pai, enquanto os nós à direita são maiores.", "correta": true},
+        {"texto": "Uma árvore onde todos os nós têm o mesmo valor.", "correta": false},
+        {"texto": "Uma árvore que não permite nós duplicados.", "correta": false}
+      ]
+    },
+    {
+      "categoria": "Estrutura de Dados",
+      "pergunta": "Qual a principal diferença entre uma fila e uma pilha?",
+      "respostas": [
+        {"texto": "Filas são mais eficientes que pilhas.", "correta": false},
+        {"texto": "Filas seguem o princípio FIFO (First-In, First-Out), enquanto pilhas seguem o princípio LIFO (Last-In, First-Out).", "correta": true},
+        {"texto": "Pilhas só podem armazenar números, enquanto filas podem armazenar qualquer tipo de dado.", "correta": false},
+        {"texto": "Pilhas são implementadas usando arrays, enquanto filas são implementadas usando listas encadeadas.", "correta": false}
+      ]
+    },
+    {
+      "categoria": "Estrutura de Dados",
+      "pergunta": "O que é um grafo?",
+      "respostas": [
+        {"texto": "Uma estrutura de dados linear que armazena elementos em sequência.", "correta": false},
+        {"texto": "Uma estrutura de dados que consiste em um conjunto de nós (vértices) conectados por arestas.", "correta": true},
+        {"texto": "Uma estrutura de dados que armazena elementos em uma ordem hierárquica.", "correta": false},
+        {"texto": "Uma estrutura de dados que armazena elementos em pares chave-valor.", "correta": false}
+      ]
+    },
+    {
+      "categoria": "Estrutura de Dados",
+      "pergunta": "O que é um hash table (tabela hash)?",
+      "respostas": [
+        {"texto": "Uma estrutura de dados que armazena elementos em ordem alfabética.", "correta": false},
+        {"texto": "Uma estrutura de dados que usa uma função hash para mapear chaves a posições em um array.", "correta": true},
+        {"texto": "Uma estrutura de dados que armazena elementos em uma árvore binária.", "correta": false},
+        {"texto": "Uma estrutura de dados que armazena elementos em uma lista encadeada.", "correta": false}
+      ]
+    },
+    {
+      "categoria": "Estrutura de Dados",
+      "pergunta": "Qual a complexidade de tempo média para inserir um elemento em uma tabela hash?",
+      "respostas": [
+        {"texto": "O(n)", "correta": false},
+        {"texto": "O(1)", "correta": true},
+        {"texto": "O(log n)", "correta": false},
+        {"texto": "O(n log n)", "correta": false}
+      ]
+    },
+    {
+      "categoria": "Estrutura de Dados",
+      "pergunta": "O que é um heap?",
+      "respostas": [
+        {"texto": "Uma estrutura de dados linear.", "correta": false},
+        {"texto": "Uma árvore binária completa que satisfaz a propriedade heap (cada nó pai é maior ou igual (max-heap) ou menor ou igual (min-heap) a seus filhos).", "correta": true},
+        {"texto": "Uma lista encadeada ordenada.", "correta": false},
+        {"texto": "Um grafo direcionado.", "correta": false}
+      ]
+    },
+    {
+      "categoria": "Estrutura de Dados",
+      "pergunta": "Qual das seguintes estruturas de dados é mais adequada para implementar uma fila de prioridade?",
+      "respostas": [
+        {"texto": "Array", "correta": false},
+        {"texto": "Lista Encadeada", "correta": false},
+        {"texto": "Heap", "correta": true},
+        {"texto": "Pilha", "correta": false}
+      ]
+    }
+  ]
+}
+
