@@ -1,0 +1,154 @@
+body::-webkit-scrollbar {
+    display: none;
+}
+
+.body-prova-simulado {
+    background-color: #780D28;
+    width: 100%;
+    height: auto;
+    display: grid;
+    grid-template-columns: 2fr 6fr 2fr;
+}
+
+.main-prova-simulado {
+    background-color: white;
+    width: 100%;
+    display: flex;
+    justify-self: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 4rem 0 3rem 0;
+    grid-column-start: 2;
+    box-shadow: rgba(0,0,0,0.5) 0px 0px 20px;
+}
+
+.limit-main-prova-simulado{
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+a {
+    color: white;
+}
+
+.div-center-main-prova-simulado {
+    display: flex;
+    justify-self: center;
+}
+
+.div-divs-main-prova-simulado {
+    width: 100%;
+    display: grid;
+    grid-template-rows: repeat(10, 2fr);
+    gap: 7rem;
+}
+
+.img-prova-simulado {
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: center;
+}
+
+.span-main-prova-simulado {
+    color: #780D28;
+    font-weight: 700;
+    font-size: 1.2rem;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.barra-lateral-provas-simulado, .barra-lateral-provas-simulado2 {
+    width: 100%;
+    background-color: #780D28;
+
+}
+
+
+.final-main-prova-simulado {
+    margin-top: 2rem;
+    padding: 2rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+.button-final-main-prova-simulado, .timer-prova-simulado, .span-final-main-prova-simulado {
+    padding: 1.2rem 1.5rem;
+    border-radius: 5px;
+    border: none;
+    background-color: #780D28;
+    color: white;
+    cursor: default;
+}
+
+.button-final-main-prova-simulado{
+    cursor: pointer;
+}
+
+.black-page-prova-simulado{
+    top: 0;
+    left: 0;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.6);
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9998;
+}
+
+.white-counteiner-prova-simulado{
+    background-color: white;
+    width: 30%;
+    height: 50%;
+    display: grid;
+    grid-template-rows: 2fr 5fr 3fr;
+}
+
+.title-counteiner-prova-simulado{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.title-counteiner-prova-simulado span{
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: #780D28;
+}
+
+.text-counteiner-prova-simulado{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.buttons-counteiner-prova-simulado{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 5fr);
+    justify-items: center;
+}
+
+.buttons-counteiner-prova-simulado button{
+    width: 60%;
+    height: 55%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    font-size: 1rem;
+    border-radius: 5px;
+}
+

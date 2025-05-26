@@ -1,0 +1,12 @@
+.button-base{
+    background-color: white;
+    color: #780d28;
+    font-size: 1.3rem;
+    font-weight: 300;
+    border: none;
+    border-radius: 0px;
+    padding: .9rem 2rem;
+    scale: 0.9;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 0px 4px;
+    transition: .5s;
+}

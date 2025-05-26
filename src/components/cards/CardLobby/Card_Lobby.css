@@ -1,0 +1,88 @@
+.main-content-item-lobby{
+    min-width: 15rem;
+    height: 90%;
+    display: grid;
+    grid-template-rows: 4fr 5fr;
+    align-self: flex-start;
+    background-color: #F1F1F1;
+    border-radius: 5px;
+    transition: .5s;
+}
+
+.main-content-item-lobby:hover{
+    scale: 1.04;
+}
+
+.main-content-item-lobby img{
+    width: 100%;
+    height: 100%;
+    border-radius: 5px 5px 0 0;
+}
+
+.info-lobby{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-rows: 4fr 3fr .1fr 3fr;
+}
+
+.div-span-lobby{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    font-size: 1.4rem;
+    font-weight: 600;
+    
+}
+
+.span-lobby{
+    width: 80%;
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    text-align: justify;
+}
+
+.link-button-lobby{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+.link-button-lobby button{
+    border: none;
+    padding: .77rem 1.78rem;
+    color: #780D28;
+    cursor: pointer;
+}
+
+.sepa{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.border-lobby{
+    justify-self: center;
+    width: 90%;
+    background-color: #780D28;
+}
+
+.horario-lobby{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 5fr);
+    justify-items: center;
+    align-items: center;
+}
+
+.horario-lobby span{
+    font-size: 1.2rem;
+    font-weight: bold;
+}

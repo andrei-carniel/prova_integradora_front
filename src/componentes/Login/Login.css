@@ -1,0 +1,95 @@
+.body {
+    background-color: #780D28;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+  }
+  
+  img {
+    pointer-events: none;
+  }
+  
+  .geral {
+    margin-bottom: 5rem;
+  }
+  
+  .div-login-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5rem;
+  }
+  
+  .div-input {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .div-div-input-user {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2rem;
+  }
+  
+  .div-div-input-pass {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.5rem;
+  }
+  
+  .div-input span {
+    color: white;
+    font-size: 15px;
+  }
+  
+  input {
+    outline: none;
+  }
+  
+  .input-user {
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 1px;
+    border: none;
+    width: 400px;
+    box-shadow: 0px 0px 4px;
+  }
+  
+  .input-pass {
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 1px;
+    border: none;
+    width: 400px;
+    box-shadow: 0px 0px 4px;
+  }
+  
+  .div-button-confirm {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .div-button-confirm button {
+    cursor: pointer;
+  }
+  
+  .button-confirm{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 10px 0px;
+    border-radius: 1px;
+    border: none;
+    width: 100px;
+    background-color: white;
+    color: #780D28;
+    transition: scale 0.5s ease-out;
+    box-shadow: black 0px 0px 4px;
+  }
+  
+  .button-confirm:active {
+    scale: 1.1;
+    transition: 0.2s;
+  }

@@ -1,0 +1,55 @@
+{
+    "alunos": [
+      {
+        "Nome": "Gustavo",
+        "Matricula": "1000346",
+        "Pontuação": "96"
+      },
+      {
+        "Nome": "Ana Beatriz",
+        "Matricula": "1000347",
+        "Pontuação": "88"
+      },
+      {
+        "Nome": "Lucas",
+        "Matricula": "1000348",
+        "Pontuação": "91"
+      },
+      {
+        "Nome": "Mariana",
+        "Matricula": "1000349",
+        "Pontuação": "85"
+      },
+      {
+        "Nome": "João Pedro",
+        "Matricula": "1000350",
+        "Pontuação": "93"
+      },
+      {
+        "Nome": "Larissa",
+        "Matricula": "1000351",
+        "Pontuação": "79"
+      },
+      {
+        "Nome": "Felipe",
+        "Matricula": "1000352",
+        "Pontuação": "87"
+      },
+      {
+        "Nome": "Carolina",
+        "Matricula": "1000353",
+        "Pontuação": "90"
+      },
+      {
+        "Nome": "Matheus",
+        "Matricula": "1000354",
+        "Pontuação": "82"
+      },
+      {
+        "Nome": "Isabela",
+        "Matricula": "1000355",
+        "Pontuação": "95"
+      }
+    ]
+  }
+  

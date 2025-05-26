@@ -1,0 +1,57 @@
+.body-tabela{
+    width: 35rem;
+    height: 70vh;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 0px 8px;
+    border-radius: 5px;
+}
+
+.nome-tabela{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nome-tabela{
+    font-size: 2rem;
+    color: #780D28;
+}
+
+.lista-tabela{
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    height: 80%;
+    gap: 2%;
+}
+
+.elementos-tabela-amostral,
+.elementos-tabela{
+    width: 100%;
+    height: 2.5rem;
+    display: grid;
+    grid-template-columns: repeat(4, 2fr);
+    background-color: #FFF;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 0px 8px;
+    border: none;
+    border-radius: 10px;
+}
+
+.elementos-tabela-amostral{
+    background-color: #780D28;
+}
+
+.elementos-tabela-amostral div{
+    color: white;
+}
+
+.div-elementos-tabela{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

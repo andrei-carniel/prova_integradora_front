@@ -1,0 +1,13 @@
+.button-Cube{
+    background-color: #E1DFE4;
+    color: #780d28;
+    font-size: 1.2rem;
+    font-weight: 700;
+    border: none;
+    width: 90%;
+    padding: .9rem 2rem;
+    border-radius: 0px;
+    scale: 0.9;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 0px 4px;
+    transition: .5s;
+}
