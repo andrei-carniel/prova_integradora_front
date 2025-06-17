@@ -3,47 +3,148 @@ import "./Provas_Escolha.css";
 import { Link } from "react-router-dom";
 import CardLobby from "../../components/cards/CardLobby/Card_Lobby";
 import Button_Base from "../../components/Button/Button_Base/Button_Base";
+import { split } from "postcss/lib/list";
 
 export default function Prova() {
   const divRef = useRef(null);
   const [choice, setChoice] = useState(localStorage.getItem("SelectionOption"));
   const [data, setData] = useState(null);
+  const [dataProva, setDataProva] = useState(null);
+  const [hourProvaComeco, setHourProvaComeco] = useState(null);
+  const [hourProvaFim, setHourProvaFim] = useState(null);
+  const [dataResult, setDataResult] = useState(null);
   const [error, setError] = useState('');
   const [token, setToken] = useState(localStorage.getItem('authToken'));
   const student_id = parseInt(localStorage.getItem('id_student'));
 
-  useEffect(() => {
-    async function getData() {
-      try {
-        const response = await fetch('http://10.197.12.103:5000/get_student_exams_list_todo', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            'x-access-token': token
-          }, body: JSON.stringify({ student_id })
-        });
+  const monthMap = {
+    Jan: '01',
+    Feb: '02',
+    Mar: '03',
+    Apr: '04',
+    May: '05',
+    Jun: '06',
+    Jul: '07',
+    Aug: '08',
+    Sep: '09',
+    Oct: '10',
+    Nov: '11',
+    Dec: '12'
+  };
 
-        const dataIdUm = await response.json();
-        setData(dataIdUm);
-        console.log(token)
-        console.log(data);
-        console.log(data.exam_list.is_finished)
+  async function getDataResult() {
+    try {
+      const response = await fetch('http://10.197.12.103:5000/get_student_exams_list_results', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'x-access-token': token
+        }, body: JSON.stringify({ student_id })
+      });
 
-      } catch (error) {
-        console.error('Erro na requisição:', error);
-        setError('Erro ao conectar com o servidor.');
+      const dataIdResult = await response.json();
+      setDataResult(dataIdResult);
+      if (dataIdResult) {
+        const examBeginFormat = () => {
+          let slicedItens = dataIdResult.exam_list[0].student_start_date.split(' ');
+          return slicedItens;
+        };
+
+        const examEndFormat = () => {
+          let slicedItens = dataIdResult.exam_list[0].student_end_date.split(' ');
+          return slicedItens;
+        };
+
+        const [nameB, dayB, monthB, yearB, hourB, GMTB] = examBeginFormat();
+        const [nameE, dayE, monthE, yearE, hourE, GMTE] = examEndFormat();
+
+        const dataFormated = `${dayB}/${monthMap[monthB]}/${yearB}`
+        const HourBeginFormated = hourB.split(':').slice(0, 2).join(':'); // "10:00:00" → "10:00"
+        const HourEndFormated = hourE.split(':').slice(0, 2).join(':');
+
+        // Agora você pode definir os dados de início e fim com os valores corretos
+        setDataProva(dataFormated); // Supondo que isso seja o que deseja
+        setHourProvaComeco(HourBeginFormated);    // Ou substitua conforme necessário
+        setHourProvaFim(HourEndFormated);    // Ou substitua conforme necessário
+        console.log(HourBeginFormated)
+        console.log(HourEndFormated)
+        console.log(dataFormated)
+
+      } else {
+        console.warn("Campo 'student_start_date' ausente nos dados recebidos.");
       }
+    } catch (error) {
+      alert('erro de requisição')
+      console.error('Erro na requisição:', error);
+      setError('Erro ao conectar com o servidor.');
     }
+  }
 
-    getData();
+  async function getDataTodo() {
+    try {
+      const response = await fetch('http://10.197.12.103:5000/get_student_exams_list_todo', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'x-access-token': token
+        },
+        body: JSON.stringify({ student_id })
+      });
+
+      const dataIdTodo = await response.json();
+      setData(dataIdTodo);
+
+      // Validação de estrutura antes de acessar a propriedade
+      if (dataIdTodo) {
+        const examBeginFormat = () => {
+          let slicedItens = dataIdTodo.exam_list[0].student_start_date.split(' ');
+          return slicedItens;
+        };
+
+        const examEndFormat = () => {
+          let slicedItens = dataIdTodo.exam_list[0].student_end_date.split(' ');
+          return slicedItens;
+        };
+
+        const [nameB, dayB, monthB, yearB, hourB, GMTB] = examBeginFormat();
+        const [nameE, dayE, monthE, yearE, hourE, GMTE] = examEndFormat();
+
+        const dataFormated = `${dayB}/${monthMap[monthB]}/${yearB}`
+        const HourBeginFormated = hourB.split(':').slice(0, 2).join(':'); // "10:00:00" → "10:00"
+        const HourEndFormated = hourE.split(':').slice(0, 2).join(':');
+
+        // Agora você pode definir os dados de início e fim com os valores corretos
+        setDataProva(dataFormated); // Supondo que isso seja o que deseja
+        setHourProvaComeco(HourBeginFormated);    // Ou substitua conforme necessário
+        setHourProvaFim(HourEndFormated);    // Ou substitua conforme necessário
+        console.log(HourBeginFormated)
+        console.log(HourEndFormated)
+        console.log(dataFormated)
+
+      } else {
+        console.warn("Campo 'student_start_date' ausente nos dados recebidos.");
+      }
+
+    } catch (error) {
+      console.error('Erro na requisição:', error);
+      setError('Erro ao conectar com o servidor.');
+    }
+  }
+
+
+  useEffect(() => {
+    getDataResult();
+    getDataTodo();
   }, [student_id, token]);
 
   function getchoice2() {
     setChoice("2");
+    localStorage.setItem("SelectionOption", 2)
   }
 
   function getchoice1() {
     setChoice("1");
+    localStorage.setItem("SelectionOption", 1)
   }
 
   return (
@@ -79,55 +180,87 @@ export default function Prova() {
             className="main-content-provas"
             style={{ display: choice === "1" ? "grid" : "none" }}
           >
-            {data && data?.exam_list?.filter(exam => exam.is_finished == false).map((exam, index) => (
-              <CardLobby
-                type={1}
-                key={index}
-                Img="/img/HistoricoProvas.png"
-                Nome={exam.name}
-                LinkTo={`/ProvaLobby/${exam.id}`}
-                style={{
-                  width: "90%",
-                  boxShadow: "rgba(0,0,0,0.25) 0px 0px 8px"
-                }}
-                styleImg={{
-                  height: "100%",
-                  width: "100%"
-                }}
-                children={"Vizualizar Prova →"}
-              />
-            ))}
+            {data?.exam_list?.length > 0 ? (
+              data.exam_list.map((exam, index) => {
+                const formatDateTime = (str) => {
+                  const date = new Date(str);
+                  date.setHours(date.getHours() + 3);
+                  const dia = String(date.getDate()).padStart(2, "0");
+                  const mes = String(date.getMonth() + 1).padStart(2, "0");
+                  const ano = date.getFullYear();
+                  const hora = String(date.getHours()).padStart(2, "0");
+                  const minuto = String(date.getMinutes()).padStart(2, "0");
+                  return {
+                    data: `${dia}/${mes}/${ano}`,
+                    hora: `${hora}:${minuto}`,
+                  };
+                };
 
-            {data && data.exam == null && (
+                const inicio = formatDateTime(exam.student_start_date);
+                const fim = formatDateTime(exam.student_end_date);
+
+                return (
+                  <CardLobby
+                    key={index}
+                    type={1}
+                    Img="/img/HistoricoProvas.png"
+                    Nome={exam.name}
+                    LinkTo={`/ProvaLobby/${exam.id}`}
+                    data={inicio.data}
+                    horaInicio={inicio.hora}
+                    horaFim={fim.hora}
+                    style={{ height: "70%", width: "90%", boxShadow: "rgba(0,0,0,0.25) 0px 0px 8px" }}
+                    styleImg={{ height: "100%", width: "100%" }}
+                    children={"Vizualizar Prova →"}
+                  />
+                );
+              })
+            ) : (
               <span>Nenhuma Prova a Fazer...</span>
             )}
-
           </div>
+
           <div
             className="main-content-provas"
             style={{ display: choice === "2" ? "grid" : "none" }}
           >
-            {data && data?.exam_list?.filter(exam => exam.is_finished == true).map((exam, index) => (
-              <CardLobby
-                type={1}
-                key={index}
-                Img="/img/HistoricoProvas.png"
-                Nome={exam.name}
-                LinkTo={`/ProvaLobby/${exam.id}`}
-                style={{
-                  width: "90%",
-                  boxShadow: "rgba(0,0,0,0.25) 0px 0px 8px"
-                }}
-                styleImg={{
-                  height: "100%",
-                  width: "100%"
-                }}
-                children={"Vizualizar Prova →"}
-              />
-            ))}
+            {dataResult?.exam_list?.length > 0 ? (
+              dataResult.exam_list.map((exam, index) => {
+                const formatDateTime = (str) => {
+                  const date = new Date(str);
+                  date.setHours(date.getHours() + 3);
+                  const dia = String(date.getDate()).padStart(2, "0");
+                  const mes = String(date.getMonth() + 1).padStart(2, "0");
+                  const ano = date.getFullYear();
+                  const hora = String(date.getHours()).padStart(2, "0");
+                  const minuto = String(date.getMinutes()).padStart(2, "0");
+                  return {
+                    data: `${dia}/${mes}/${ano}`,
+                    hora: `${hora}:${minuto}`,
+                  };
+                };
 
-            {data && data.exam == null && (
-              <span>Nenhuma Prova Feita...</span>
+                const inicio = formatDateTime(exam.student_start_date);
+                const fim = formatDateTime(exam.student_end_date);
+
+                return (
+                  <CardLobby
+                    key={index}
+                    type={1}
+                    Img="/img/HistoricoProvas.png"
+                    Nome={exam.name}
+                    LinkTo={`/ResultadoSimulado/${exam.id}`}
+                    data={inicio.data}
+                    horaInicio={inicio.hora}
+                    horaFim={fim.hora}
+                    style={{ height: "70%", width: "90%", boxShadow: "rgba(0,0,0,0.25) 0px 0px 8px" }}
+                    styleImg={{ height: "100%", width: "100%" }}
+                    children={"Visualizar Resultado  →"}
+                  />
+                );
+              })
+            ) : (
+              <span>Nenhuma Prova a Fazer...</span>
             )}
           </div>
         </div>

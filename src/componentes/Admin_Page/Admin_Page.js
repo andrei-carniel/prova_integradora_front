@@ -1,6 +1,6 @@
 import "./Admin_Page.css";
 import { Link } from "react-router-dom";
-import CardAdmin from "../../components/cards/Card_Admin/Card_Admin";
+import CardLobby from "../../components/cards/CardLobby/Card_Lobby";
 import InputAdmin from "../../components/inputs/inputAdmin/Input_Admin";
 import Button_Base from "../../components/Button/Button_Base/Button_Base";
 
@@ -20,33 +20,12 @@ export default function Admin_Page() {
           </div>
         </div>
         <div className="main-admin">
-          
-          <CardAdmin
-            Img="/img/HistoricoProvas.png"
-            Nome="Provas a Fazer"
-            LinkTo="/ProvaView"
-          />
-          <CardAdmin
-            Img="/img/HistoricoProvas.png"
-            Nome="Vizualizar Provas Antigas"
-            LinkTo="/ProvaView"
-          />
-          <CardAdmin
-            Img="/img/HistoricoProvas.png"
-            Nome="Adicionar User"
-            LinkTo="/ProvaView"
-          />
-          <CardAdmin
-            Img="/img/HistoricoProvas.png"
-            Nome="Remover User"
-            LinkTo="/ProvaView"
-          />
 
-          <CardAdmin
-            Img="/img/HistoricoProvas.png"
-            Nome="Editar User"
-            LinkTo="/ProvaView"
-          />
+          <CardLobby children={"Avançar"} Img="/img/ProvasFazer.png" onClick={() => { localStorage.setItem("SelectionOption", 1) }} Nome="Provas a Fazer" LinkTo="/Provas" style={{ height: "80%", width: "100%", boxShadow: "rgba(0,0,0,0.25) 0px 0px 8px" }} styleImg={{ height: "100%", width: "100%" }} /> {/* Chamada da function dentro de '../../components/cards/CardLobby/Card_Lobby.js' */}
+          <CardLobby children={"Avançar"} Img="/img/ProvasFazer.png" onClick={() => { localStorage.setItem("SelectionOption", 1) }} Nome="Vizualizar Provas Antigas" LinkTo="/ProvaView" style={{ height: "80%", width: "100%", boxShadow: "rgba(0,0,0,0.25) 0px 0px 8px" }} styleImg={{ height: "100%", width: "100%" }} /> {/* Chamada da function dentro de '../../components/cards/CardLobby/Card_Lobby.js' */}
+          <CardLobby children={"Avançar"} Img="/img/AddUser.png" onClick={() => { localStorage.setItem("SelectionOption", 1) }} Nome="Adicionar User" LinkTo="/Provas" style={{ height: "80%", width: "100%", boxShadow: "rgba(0,0,0,0.25) 0px 0px 8px" }} styleImg={{ height: "100%", width: "100%" }} /> {/* Chamada da function dentro de '../../components/cards/CardLobby/Card_Lobby.js' */}
+          <CardLobby children={"Avançar"} Img="/img/DeleteUser.png" onClick={() => { localStorage.setItem("SelectionOption", 1) }} Nome="Remover User" LinkTo="/Provas" style={{ height: "80%", width: "100%", boxShadow: "rgba(0,0,0,0.25) 0px 0px 8px" }} styleImg={{ height: "100%", width: "100%" }} /> {/* Chamada da function dentro de '../../components/cards/CardLobby/Card_Lobby.js' */}
+          <CardLobby children={"Avançar"} Img="/img/ModifyUser.png" onClick={() => { localStorage.setItem("SelectionOption", 1) }} Nome="Editar User" LinkTo="/Provas" style={{ height: "80%", width: "100%", boxShadow: "rgba(0,0,0,0.25) 0px 0px 8px" }} styleImg={{ height: "100%", width: "100%" }} /> {/* Chamada da function dentro de '../../components/cards/CardLobby/Card_Lobby.js' */}
 
         </div>
       </div>

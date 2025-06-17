@@ -76,6 +76,7 @@
 }
 
 .main-content-provas{
+    min-height: 400px;
     width: 90%;
     grid-template-columns: repeat(3, 2fr);
     gap: 2rem;

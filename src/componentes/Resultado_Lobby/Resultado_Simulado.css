@@ -2,7 +2,7 @@ body::-webkit-scrollbar {
     display: none;
 }
 
-.body-prova-simulado {
+.body-resultado-simulado {
     background-color: #780D28;
     width: 100%;
     height: auto;
@@ -10,7 +10,7 @@ body::-webkit-scrollbar {
     grid-template-columns: 2fr 6fr 2fr;
 }
 
-.main-prova-simulado {
+.main-resultado-simulado {
     background-color: white;
     width: 100%;
     display: flex;
@@ -22,7 +22,7 @@ body::-webkit-scrollbar {
     box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 20px;
 }
 
-.limit-main-prova-simulado {
+.limit-main-resultado-simulado {
     width: 80%;
     display: flex;
     justify-content: center;
@@ -34,12 +34,12 @@ a {
     color: white;
 }
 
-.div-center-main-prova-simulado {
+.div-center-main-resultado-simulado {
     display: flex;
     justify-self: center;
 }
 
-.div-divs-main-prova-simulado {
+.div-divs-main-resultado-simulado {
     width: 100%;
     display: grid;
     grid-template-rows: repeat(10, 2fr);
@@ -47,13 +47,13 @@ a {
     margin-bottom: 2rem;
 }
 
-.img-prova-simulado {
+.img-resultado-simulado {
     margin-bottom: 2rem;
     display: flex;
     justify-content: center;
 }
 
-.span-main-prova-simulado {
+.span-main-resultado-simulado {
     color: #780D28;
     font-weight: 700;
     font-size: 1.2rem;
@@ -62,15 +62,15 @@ a {
     margin-bottom: 2rem;
 }
 
-.barra-lateral-provas-simulado,
-.barra-lateral-provas-simulado2 {
+.barra-lateral-resultado-simulado,
+.barra-lateral-resultado-simulado2 {
     width: 100%;
     background-color: #780D28;
 
 }
 
 
-.final-main-prova-simulado {
+.final-main-resultado-simulado {
     margin-top: 2rem;
     padding: 2rem 0;
     display: flex;
@@ -79,9 +79,9 @@ a {
     gap: 2rem;
 }
 
-.button-final-main-prova-simulado,
-.timer-prova-simulado,
-.span-final-main-prova-simulado {
+.button-final-main-resultado-simulado,
+.timer-resultado-simulado,
+.span-final-main-resultado-simulado {
     padding: 1.2rem 1.5rem;
     border-radius: 5px;
     border: none;
@@ -90,11 +90,11 @@ a {
     cursor: default;
 }
 
-.button-final-main-prova-simulado {
+.button-final-main-resultado-simulado {
     cursor: pointer;
 }
 
-.black-page-prova-simulado {
+.black-page-resultado-simulado {
     top: 0;
     left: 0;
     position: fixed;
@@ -107,7 +107,7 @@ a {
     z-index: 9998;
 }
 
-.white-counteiner-prova-simulado {
+.white-counteiner-resultado-simulado {
     background-color: white;
     width: 30%;
     height: 50%;
@@ -115,7 +115,7 @@ a {
     grid-template-rows: 2fr 5fr 3fr;
 }
 
-.title-counteiner-prova-simulado {
+.title-counteiner-resultado-simulado {
     width: 100%;
     height: 100%;
     display: flex;
@@ -123,7 +123,7 @@ a {
     justify-content: center;
 }
 
-.title-counteiner-prova-simulado span {
+.title-counteiner-resultado-simulado span {
     font-weight: 700;
     font-size: 1.5rem;
     color: #780D28;
@@ -147,17 +147,15 @@ a {
     display: flex;
 }
 
-.text-counteiner-prova-simulado {
+.text-counteiner-resultado-simulado {
     width: 100%;
     height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
-    gap: 5%;
 }
 
-.buttons-counteiner-prova-simulado {
+.buttons-counteiner-resultado-simulado {
     width: 100%;
     height: 100%;
     display: grid;
@@ -165,7 +163,7 @@ a {
     justify-items: center;
 }
 
-.buttons-counteiner-prova-simulado button {
+.buttons-counteiner-resultado-simulado button {
     width: 60%;
     height: 55%;
     display: flex;
@@ -176,3 +174,12 @@ a {
     border-radius: 5px;
 }
 
+.button-back-resultado-simulado{
+    position: fixed;
+    left: 60px;
+    top: 60px;
+    padding: 2rem 4rem;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 0px 4px;
+    color:#780D28
+}

@@ -1,450 +1,69 @@
-.div-add-materia-mid-modal::-webkit-scrollbar {
-    display: none;
+.body-prova-addition{
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(2, 5fr);
+  overflow: hidden;
+}
+
+.limita{
+  overflow-y: auto;
+  border: black 1px solid;
+  max-height: 80vh;
+}
+
+.left-side-body-prova-addition{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.left-side-aside-prova-addition{
+  grid-column-start: 1;
+  width: 85%;
+  height: 85%;
+  background-color: white;
+  border-radius: 5px;
+}
+
+.right-side-body-prova-addition{
+  width: 100%;
+  height: 100%;
+  background-color: #780d28;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.prova-right-side-prova-addition{
+  width: 85%;
+  height: 90%;
+  background-color: white;
+  border-radius: 5px;
+}
+
+.insert-simulado-prova-addition{
+  width: 100%;
+  height: 8%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.insert-simulado-prova-addition input{
+  width: 80%;
+  height: 80%;
+}
+
+.limita {
+  container-type: inline-size;
+}
+
+@container (max-width: 700px) {
+  .body-prova-simulado {
+    grid-template-columns: 1fr 98fr 1fr;
+    
   }
-  
-  .limitador-mid-modal::-webkit-scrollbar {
-    display: none;
-  }
-  
-  .container-mid-modal-question::-webkit-scrollbar {
-    display: none;
-  }
-  
-  .body-prova-addition {
-    width: 100%;
-    height: 100vh;
-    display: grid;
-    grid-template-columns: 6fr 5fr;
-  }
-  
-  button {
-    padding: 1rem 2rem;
-    background-color: #780D28;
-    border: none;
-    color: white;
-    font-weight: bold;
-    border-radius: 20px;
-  }
-  
-  .left-body-prova-addition {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .container-prova-addition {
-    height: 90%;
-    width: 70%;
-    display: grid;
-    grid-template-rows: 2fr 6fr 6fr 2fr;
-    gap: 2rem;
-  }
-  
-  .info-prova-addition {
-    width: 100%;
-    height: 100%;
-    display: grid;
-    grid-template-columns: 5fr 6fr;
-    gap: 10%;
-  }
-  
-  .info-details-prova-addition {
-    display: grid;
-    justify-items: center;
-    align-items: center;
-    gap: 5%;
-    grid-template-rows: repeat(4, 20%);
-  }
-  
-  .info-details-prova-addition span {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #780D28;
-    color: white;
-    font-size: 1.2rem;
-  }
-  
-  .info-details-prova-addition input {
-    width: 100%;
-    height: 100%;
-    border: none;
-    background-color: #eeeeee;
-    border-bottom: 2px solid #780d28;
-    border-right: 2px solid #780d28;
-  }
-  
-  .input-select {
-    width: 100%;
-    height: 100%;
-    border: none;
-    background-color: #eeeeee;
-    border-bottom: 2px solid #780d28;
-    border-right: 2px solid #780d28;
-  }
-  
-  .materias-prova-addition {
-    background: #eee;
-    max-width: 100%;
-    max-height: 100%;
-    display: flex;
-    gap: 2%;
-    margin-top: -1rem;
-  }
-  
-  .limitar-materias-prova-addition {
-    margin: 1rem;
-    width: 100%;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, 1fr);
-    gap: 5% 2%;
-  }
-  
-  .adicionar-materias-prova-addition {
-    background-color: black;
-    overflow: hidden;
-  }
-  
-  .button-select-delete {
-    background-color: #2fc402;
-    overflow: hidden;
-  }
-  
-  .concluir-prova-addition {
-    justify-self: end;
-    align-self: flex-end;
-  }
-  
-  .right-body-prova-addition {
-    display: grid;
-    grid-template: 1fr 8fr / 1fr 7fr 1fr;
-    background-color: #780d28;
-    position: relative;
-    max-height: 100vh;
-  }
-  
-  .prova-right-side-prova-addition {
-    background-color: white;
-    grid-row-start: 2;
-    grid-column-start: 2;
-    width: 100%;
-    max-height: 97%;
-    overflow-y: auto;
-    background: white;
-    padding: 10px;
-    display: grid;
-    grid-template-rows: repeat(5, 20%);
-  }
-  
-  .overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: rgba(0, 0, 0, 0.7);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-  }
-  
-  .modal {
-    width: 35%;
-    height: 70%;
-    background-color: white;
-    display: grid;
-    grid-template-rows: 2fr 7fr 1.5fr;
-  }
-  
-  .top-modal {
-    display: grid;
-    grid-template-columns: 3fr 7fr;
-  }
-  
-  .top-modal button {
-    margin-left: -5rem;
-    color: white;
-    font-size: 1rem;
-    font-weight: bold;
-    padding: 1rem 1.2rem;
-    border-radius: 50%;
-    justify-self: center;
-    align-self: center;
-  }
-  
-  .mid-modal {
-    width: 100%;
-    height: 100%;
-    display: grid;
-    grid-template-columns: 5fr 5fr;
-  }
-  
-  .left-mid-modal {
-    width: 100%;
-    height: 100%;
-    display: grid;
-    grid-template-rows: 8fr 2fr;
-    justify-items: center;
-  }
-  
-  .left-mid-modal span {
-    width: 80%;
-    justify-self: center;
-    color: #2fc402;
-  }
-  
-  .materias-mid-modal {
-    width: 90%;
-    max-height: 100%;
-    overflow: hidden;
-  }
-  
-  .add-materia-mid-modal {
-    width: 100%;
-    max-height: 100%;
-    overflow: hidden;
-    text-align: center;
-    background-color: black;
-    color: white;
-    height: 15%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.8rem;
-  }
-  
-  .materias-mid-modal button {
-    width: 100%;
-    padding: 1rem 0;
-    border-radius: 0;
-  }
-  
-  .limitador-mid-modal {
-    height: 14rem;
-    background-color: #f1f1f1;
-    overflow-y: auto;
-  }
-  
-  .materias-open-modal button {
-    background-color: black;
-    border: 1px solid white;
-    font-weight: bold;
-  }
-  
-  .right-mid-modal {
-    width: 100%;
-    height: 100%;
-    display: grid;
-    grid-template-rows: 8fr 2fr;
-    justify-items: center;
-  }
-  
-  .right-mid-modal span {
-    width: 80%;
-    justify-self: center;
-    color: #2fc402;
-  }
-  
-  .bottom-modal {
-    width: 100%;
-    display: grid;
-    grid-template-columns: 6fr 4fr;
-  }
-  
-  .bottom-modal button {
-    grid-column-start: 2;
-    padding: 0.5rem 2rem;
-    align-self: center;
-    justify-self: center;
-  }
-  
-  .div-add-materia-mid-modal button {
-    background-color: #2fc402;
-    border: 1px solid white;
-  }
-  
-  .div-add-materia-mid-modal {
-    height: 14rem;
-    background-color: #f1f1f1;
-    overflow-y: auto;
-  }
-  
-  .logo-catolica-right-side {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .questao-right-side {
-    width: 90%;
-    height: 100%;
-    justify-self: center;
-  
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .botao-lateral-direito {
-    border-radius: 0;
-  }
-  
-  .modal-question {
-    width: 35%;
-    height: 85%;
-    background-color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .grid-modal {
-    width: 90%;
-    height: 90%;
-    display: grid;
-    grid-template-rows: 2fr 7fr 1fr;
-    gap: 2%;
-  }
-  
-  .confirm-button-modal {
-    justify-self: end;
-  }
-  
-  .top-modal-question {
-    display: grid;
-    grid-template-columns: 5fr 5fr;
-  }
-  
-  .top-modal-question .complete {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: start;
-  }
-  
-  .complete button {
-    border-radius: 50%;
-    padding: 1.5rem;
-  }
-  
-  .top-modal-question span {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    text-align: justify;
-    font-size: 1.2rem;
-    margin: 0.2rem;
-    color: #2fc402;
-  }
-  
-  .container-mid-modal-question {
-    width: 100%;
-    height: 100%;
-    background-color: white;
-    overflow-y: auto;
-  }
-  
-  .container-mid-modal-prova-amostral {
-    width: 100%;
-    height: 100%;
-    background-color: #d9d9d9;
-  }
-  
-  .pergunta-item {
-    width: 100%;
-    height: auto;
-    background-color: white;
-    display: grid;
-    grid-template-rows: 4fr 6fr;
-    max-height: 270px;
-    cursor: pointer;
-    transition: transform 0.2s;
-    margin-bottom: 2%;
-  }
-  
-  .title-question-modal {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: justify;
-    background-color: #780d28;
-  }
-  
-  .pergunta-inativa {
-    background-color: #f8d7da;
-    transition: background-color 0.3s, opacity 0.3s;
-  }
-  
-  .pergunta-item span {
-    width: 95%;
-    color: white;
-  }
-  
-  .container-question-modal {
-    display: flex;
-    flex-direction: column;
-    gap: 10%;
-    height: 100%;
-    width: 90%;
-    text-align: justify;
-  }
-  
-  .button-criar-pergunta {
-    width: 100%;
-    height: 4rem;
-    background-color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .input-resposta {
-    width: 100%;
-    padding: 1.5% 0;
-    background-color: #eeeeee;
-    color: black;
-    border: none;
-  }
-  
-  .input-pergunta {
-    width: 100%;
-    padding: 2% 3rem;
-    background-color: transparent;
-    color: white;
-    border: none;
-  }
-  
-  .input-pergunta::placeholder {
-    color: white;
-  }
-  
-  .button-criar-pergunta button {
-    width: 100%;
-    background-color: black;
-  }
-  
-  .response-question-modal {
-    display: flex;
-    gap: 5%;
-    margin-bottom: 2%;
-  }
-  
-  .response-question-modal label {
-    font-size: 1rem;
-  }
-  
-  .pergunta-item form {
-    display: flex;
-    align-self: center;
-    padding: 1rem 0;
-  }
+}

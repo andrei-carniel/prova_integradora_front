@@ -26,14 +26,10 @@ export default function CardLobby({ type, children, Img, Nome, LinkTo, onClick, 
                         <div className="border-lobby"></div>
                         <div className="horario-lobby">
                             <span className="hora-horario-lobby">
-                                {horaInicio != null && horaFim != null && ({horaInicio}-{horaFim})}
-                                {horaInicio == null && horaFim == null &&(
-                                    <span>18:00 - 20:00</span>
-                                )}
+                                {horaInicio && horaFim ? `${horaInicio} - ${horaFim}` : '18:00 - 20:00'}
                             </span>
                             <span className="data-horario-lobby">
-                                {data != null && ({data})}
-                                {data == null && (<span>21/05/2025</span>)}
+                                {data != null && (data)}
                             </span>
                         </div>
                     </>

@@ -1,6 +1,6 @@
 .body-tabela{
     width: 35rem;
-    height: 70vh;
+    height: 90%;
     display: flex;
     justify-content: space-evenly;
     flex-direction: column;

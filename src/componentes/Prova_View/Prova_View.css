@@ -1,58 +1,59 @@
-.body-provas-view{
+.body-provas-view {
     width: 100%;
-    height: 100vh;
+    height: auto;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 2rem;
-    
 }
 
-.addition-prova-view{
-    grid-column-start: 4;
-}
-
-.divisor-provas-view{
+.divisor-provas-view {
     width: 85%;
     height: 80%;
     display: grid;
-    grid-template-rows: 6fr .1fr 21fr;
 }
 
-.header-provas-view{
+.addition-prova-view {
+    grid-column-start: 4;
+}
+
+.header-provas-view {
     width: 80%;
+    padding: 2rem 0;
     display: grid;
     grid-template-columns: 2fr 3fr 3fr 2fr;
     justify-items: end;
     align-items: center;
 }
 
-.sair-header-provas-view{
+.sair-header-provas-view {
     grid-column-start: 1;
     align-self: center;
     justify-self: start;
 }
 
-button{
+button {
     cursor: pointer;
 }
 
-.trocar-header-provas-view{
+.trocar-header-provas-view {
     grid-column-start: 3;
     justify-self: center;
     align-self: center;
 }
 
-.adicionar-header-provas-view{
+.adicionar-header-provas-view {
     grid-column-start: 4;
     justify-self: end;
     align-self: center;
 }
 
-.main-provas-view{
+.main-provas-view {
     width: 90%;
     display: grid;
-    grid-row-start: 3;
-    grid-template-columns: repeat(4, 25%);
+    grid-template-columns: repeat(4, 2fr);
+    justify-items: center;
+    gap: 0 2rem;
 }

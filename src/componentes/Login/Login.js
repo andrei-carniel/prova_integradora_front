@@ -1,7 +1,9 @@
+// Importação de Functions, bibliotecas e pagina de estilização
 import React from 'react';
 import './Login.css'
-import Token_Request from '../../requests/Token/Token_Request'; // Ajuste o caminho
+import Token_Request from '../../requests/Token/Token_Request';
 
+// Html e CSS (Formato React)
 export default function LoginMain() {
   return (
     <div className="body">
@@ -14,7 +16,7 @@ export default function LoginMain() {
           />
         </div>
         <div className="div-input">
-          <Token_Request />
+          <Token_Request /> {/* Chamada da function dentro de '../../requests/Token/Token_Request' */}
         </div>
       </div>
     </div>

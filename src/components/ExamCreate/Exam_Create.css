@@ -1,0 +1,66 @@
+.form-exam-create {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-rows: repeat(10, 1fr);
+
+}
+
+.nome-prova-exam-create,
+.local-exam-create,
+.obs-exam-create,
+.id-student-exam-create,
+.exam-start-exam-create,
+.exam-end-exam-create,
+.period-exam-create,
+.course-exam-create,
+.number-question-exam-create {
+    display: grid;
+    grid-template-columns: repeat(2, 5fr);
+    gap: 2%;
+    margin: 1%;
+}
+
+.form-exam-create label {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #780d28;
+    color: white;
+    box-shadow: rgba(0, 0, 0, 0.25) 0 0 4px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.form-exam-create input,
+.form-exam-create select {
+    background-color: #EEEEEE;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.datetime-split{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 5fr);
+    gap: 5%;
+}
+
+.button-exam-create {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-exam-create button {
+    width: 40%;
+    height: 70%;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.25) 0 0 4px;
+    border: none;
+}

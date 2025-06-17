@@ -5,19 +5,20 @@ import InputPergunta from '../../components/inputs/inputPergunta/Input_Pergunta'
 
 
 
-export default function ProvaSimulado() {
+export default function ProvaSimulado({ examId: propExamId, valid }) {
     const navigate = useNavigate();
-    const [isFullscreen, setIsFullscreen] = useState(false);
     const [tempoRestante, setTempoRestante] = useState(3600);
     const [data, setData] = useState(null);
-    const { examId } = useParams();
-    const examIdNumber = parseInt(examId);
+    const [dataDesable, setDataDesable] = useState(null);
+    const { examId: paramExamId } = useParams();
+    const examIdNumber = parseInt(propExamId ?? paramExamId);
     const [error, setError] = useState('');
     const [token, setToken] = useState(localStorage.getItem('authToken'));
     const student_id = parseInt(localStorage.getItem('id_student'));
     const [respostas, setRespostas] = useState({});
     const [confirmar, setConfirmar] = useState(false)
     const respostasValidas = Object.values(respostas).filter(r => r !== null && r !== '').length;
+
     useEffect(() => {
         async function getData() {
             try {
@@ -38,14 +39,10 @@ export default function ProvaSimulado() {
 
                 const dataIdUm = await response.json();
 
-                // Embaralha as perguntas
-                if (dataIdUm.exam_list && dataIdUm.exam_list[0]?.questions) {
-                    dataIdUm.exam_list[0].questions = shuffleArray(dataIdUm.exam_list[0].questions);
-                }
-
                 setData(dataIdUm);
                 console.log(dataIdUm);
             } catch (error) {
+                alert("Erro: " + error)
                 console.error('Erro na requisição:', error);
                 setError('Erro ao conectar com o servidor.');
             }
@@ -66,15 +63,6 @@ export default function ProvaSimulado() {
         }
     }, [tempoRestante]);
 
-    function shuffleArray(array) {
-        const shuffled = [...array];
-        for (let i = shuffled.length - 1; i > 0; i--) {
-            const j = Math.floor(Math.random() * (i + 1));
-            [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
-        }
-        return shuffled;
-    }
-
     const formatarTempo = (segundos) => {
         const minutos = Math.floor(segundos / 60);
         const segundosRestantes = segundos % 60;
@@ -84,26 +72,33 @@ export default function ProvaSimulado() {
     const finalizarProva = async () => {
         const respostasFormatadas = Object.entries(respostas).map(([questionId, answerId]) => ({
             question_id: parseInt(questionId),
-            answer_id: answerId
+            answer_id: parseInt(answerId)
         }));
 
+        try {
+            const response = await fetch('http://10.197.12.103:5000/student_exams_finish', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'x-access-token': token
+                },
+                body: JSON.stringify({
+                    student_id,
+                    exam_id: examIdNumber,
+                    question_list: respostasFormatadas
+                })
+            });
+            if (!response.ok) {
+                const errorData = await response.text();
+                console.error('Erro ao enviar respostas:', response.status, errorData);
+                alert('Responda todas as questões');
+                return;
+            }
 
-        // try {
-        //     await fetch('http://10.197.12.103:5000/submit_exam_answers', {
-        //         method: 'POST',
-        //         headers: {
-        //             'Content-Type': 'application/json',
-        //             'x-access-token': token
-        //         },
-        //         body: JSON.stringify({
-        //             student_id,
-        //             exam_id: examIdNumber,
-        //             answers: respostasFormatadas
-        //         })
-        //     });
-        // } catch (error) {
-        //     console.error('Erro ao enviar respostas:', error);
-        // }
+        } catch (error) {
+            console.error('Erro ao enviar respostas:', error);
+            alert('Erro ao enviar respostas.');
+        }
 
         if (document.fullscreenElement) {
             document.exitFullscreen().catch((err) => {
@@ -111,13 +106,12 @@ export default function ProvaSimulado() {
             });
         }
 
-        setIsFullscreen(false);
         navigate(`/Resultado/${examIdNumber}`);
+        console.log(respostasFormatadas)
     };
 
     const handleRespostaChange = (questionId, answer) => {
         setRespostas((prevRespostas) => {
-            // Se a questão ainda não tinha sido respondida, atualiza
             const jaRespondida = prevRespostas[questionId] !== undefined;
             return {
                 ...prevRespostas,
@@ -160,16 +154,20 @@ export default function ProvaSimulado() {
                             />
                         ))}
                     </div>
-                    <div className='final-main-prova-simulado'>
-                        <button onClick={() => setConfirmar(true)} className='button-final-main-prova-simulado'>
-                            Finalizar Prova
-                        </button>
+                    {valid !== false && (
+                        <div className='final-main-prova-simulado'>
+                            <button onClick={() => setConfirmar(true)} className='button-final-main-prova-simulado'>
+                                Finalizar Prova
+                            </button>
 
-                        <div className='timer-prova-simulado'>{formatarTempo(tempoRestante)}</div>
-                        <span className="span-final-main-prova-simulado">
-                            {respostasValidas}/{qtd}
-                        </span>
-                    </div>
+                            <div className='timer-prova-simulado'>{formatarTempo(tempoRestante)}</div>
+                            <span className="span-final-main-prova-simulado">
+                                {respostasValidas}/{qtd}
+                            </span>
+                        </div>
+                    )}
+
+
                     {confirmar && (
                         <div className='black-page-prova-simulado'>
                             <div className='white-counteiner-prova-simulado'>
@@ -178,6 +176,8 @@ export default function ProvaSimulado() {
                                 </div>
                                 <div className='text-counteiner-prova-simulado'>
                                     <span>Deseja finalizar a prova?</span>
+                                    {respostasValidas !== qtd && (
+                                        <span><strong>Você não respondeu todas as questões</strong></span>)}
                                 </div>
                                 <div className='buttons-counteiner-prova-simulado'>
                                     <button onClick={() => setConfirmar(false)}>Cancelar</button>
