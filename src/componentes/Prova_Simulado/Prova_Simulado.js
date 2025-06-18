@@ -71,7 +71,7 @@ export default function ProvaSimulado({ examId: propExamId, valid }) {
 
                 if (horaAtualMinutos >= horaFinalMinutos) {
                     clearInterval(verificarHorario);
-                    finalizarProva();
+                    
                 }
 
                 console.log(`Atual: ${horaAtualMinutos} | Final: ${horaFinalMinutos}`);

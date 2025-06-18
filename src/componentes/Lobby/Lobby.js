@@ -45,7 +45,7 @@ export default function LobbyMain() {
           <Tabela /> {/* Chamada da function dentro de '../../components/Tabela/Tabela.js' */}
           <div className="div-lobby-pages">
             <CardLobby children={"Avançar"} Img="/img/ProvasFazer.png" onClick={() => { localStorage.setItem("SelectionOption", 1) }} Nome="Provas a Fazer" LinkTo="/Provas" style={{ height: "50%", width: "100%", boxShadow: "rgba(0,0,0,0.25) 0px 0px 8px" }} styleImg={{ height: "100%", width: "100%" }} /> {/* Chamada da function dentro de '../../components/cards/CardLobby/Card_Lobby.js' */}
-            <CardLobby children={"Acessar"} Img="/img/HistoricoProvas.png" onClick={() => { localStorage.setItem("SelectionOption", 2) }} Nome="Provas Feitas" LinkTo="/Provas" style={{ height: "80%", width: "100%", boxShadow: "rgba(0,0,0,0.25) 0px 0px 8px" }} styleImg={{ height: "100%", width: "100%" }} /> {/* Chamada da function dentro de '../../components/cards/CardLobby/Card_Lobby.js' */}
+            <CardLobby children={"Acessar"} Img="/img/HistoricoProvas.png" onClick={() => { localStorage.setItem("SelectionOption", 2) }} Nome="Provas Feitas" LinkTo="/Provas" style={{ height: "50%", width: "100%", boxShadow: "rgba(0,0,0,0.25) 0px 0px 8px" }} styleImg={{ height: "100%", width: "100%" }} /> {/* Chamada da function dentro de '../../components/cards/CardLobby/Card_Lobby.js' */}
             {dataPerson?.is_admin && (
               <Link to={"../adminPage"}>
                 <Button_Base children="Administrador" style={{ width: "100%" }} /> {/* Chamada da function dentro de '../../components/Button/Button_Base/Button_Base.js' */}
