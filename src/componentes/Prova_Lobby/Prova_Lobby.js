@@ -32,10 +32,8 @@ export default function ProvaLobby() {
 
         const dataIdUm = await response.json();
         setData(dataIdUm);
-        console.log(dataIdUm);
 
       } catch (error) {
-        console.error('Erro na requisição:', error);
         setError('Erro ao conectar com o servidor.');
       }
     }
@@ -73,21 +71,22 @@ export default function ProvaLobby() {
           </Link>
         </div>
         <div className="div-perfil-prova-lobby">
-          </div>
+        </div>
       </div>
       <div className="div-main-prova-lobby">
-        <div className="div-central-main-prova-lobby">
-          <div className="div-img-main-prova-lobby">
-            <img src="/img/LoginImage.png" className="img-main-prova-lobby" alt="Login" />
-          </div>
-          <div className="div-button-main-prova-lobby">
-            <div onClick={() => {
-              iniciarProva();
-            }}>
-              <Button_Base children={"Começar Prova"} style={{ padding: "2rem 3.5rem" }} />
+
+          <div className="div-central-main-prova-lobby">
+            <div className="div-img-main-prova-lobby">
+              <img src="/img/LoginImage.png" className="img-main-prova-lobby" alt="Login" />
+            </div>
+            <div className="div-button-main-prova-lobby">
+              <div onClick={() => {
+                iniciarProva();
+              }}>
+                <Button_Base children={"Começar Prova"} style={{ padding: "2rem 3.5rem" }} />
+              </div>
             </div>
           </div>
-        </div>
           {data?.exam_list && (
             <div className="div-central-main-prova-tipo">
               <h1>Prova do 2° Semestre</h1>

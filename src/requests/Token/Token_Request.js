@@ -17,7 +17,6 @@ function LoginForm() {
 
   useEffect(() => {
   if (decodedToken) {
-    console.log(decodedToken.student_id);
     localStorage.setItem('id_student', decodedToken.student_id);
     localStorage.setItem('ra_student', decodedToken.enterprise_id);
     localStorage.setItem('university_id', decodedToken.university_id);
@@ -72,7 +71,6 @@ function LoginForm() {
       navigate('/lobby');
 
     } catch (error) { //falha na hora de requisitar 'http://10.197.12.103:5000/auth/login'
-      console.error('Erro na requisição:', error);
       setError('Erro ao conectar com o servidor.');
     }
   };

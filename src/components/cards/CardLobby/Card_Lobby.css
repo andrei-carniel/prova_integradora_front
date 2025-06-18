@@ -1,7 +1,7 @@
 .main-content-item-lobby{
     min-width: 15rem;
     height: 90%;
-    min-height: 515px;
+    min-height: 450px;
     display: grid;
     grid-template-rows: 4fr 5fr;
     align-self: flex-start;

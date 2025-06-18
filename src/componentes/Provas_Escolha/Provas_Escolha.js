@@ -66,16 +66,9 @@ export default function Prova() {
         setDataProva(dataFormated); // Supondo que isso seja o que deseja
         setHourProvaComeco(HourBeginFormated);    // Ou substitua conforme necessário
         setHourProvaFim(HourEndFormated);    // Ou substitua conforme necessário
-        console.log(HourBeginFormated)
-        console.log(HourEndFormated)
-        console.log(dataFormated)
 
-      } else {
-        console.warn("Campo 'student_start_date' ausente nos dados recebidos.");
       }
     } catch (error) {
-      alert('erro de requisição')
-      console.error('Erro na requisição:', error);
       setError('Erro ao conectar com o servidor.');
     }
   }
@@ -117,16 +110,11 @@ export default function Prova() {
         setDataProva(dataFormated); // Supondo que isso seja o que deseja
         setHourProvaComeco(HourBeginFormated);    // Ou substitua conforme necessário
         setHourProvaFim(HourEndFormated);    // Ou substitua conforme necessário
-        console.log(HourBeginFormated)
-        console.log(HourEndFormated)
-        console.log(dataFormated)
 
-      } else {
-        console.warn("Campo 'student_start_date' ausente nos dados recebidos.");
+
       }
 
     } catch (error) {
-      console.error('Erro na requisição:', error);
       setError('Erro ao conectar com o servidor.');
     }
   }

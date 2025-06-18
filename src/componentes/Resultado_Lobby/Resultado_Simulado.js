@@ -40,10 +40,7 @@ export default function ResultadoSimulado({ examId: propExamId, valid }) {
                 const dataIdUm = await response.json();
 
                 setData(dataIdUm);
-                console.log(dataIdUm);
             } catch (error) {
-                alert("Erro: " + error)
-                console.error('Erro na requisição:', error);
                 setError('Erro ao conectar com o servidor.');
             }
         }

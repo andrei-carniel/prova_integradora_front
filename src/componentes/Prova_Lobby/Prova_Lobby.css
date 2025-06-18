@@ -90,10 +90,16 @@
     border-radius: 31.76px;
 }
 
+.retrogrado{
+    width: 70%;
+    height: 80%;
+    
+}
+
 .div-central-main-prova-tipo {
     height: auto;
     min-height: 50%;
-    background: linear-gradient(184deg, rgba(190, 6, 57, 1) 0%, rgba(123, 18, 44, 1) 100%);
+    background: linear-gradient(214deg, rgba(190, 6, 57, 1) 0%, rgba(123, 18, 44, 1) 100%);
     width: 22%;
     display: flex;
     flex-direction: column;
@@ -102,6 +108,7 @@
     border-radius: 5px;
     color: white;
     padding: 2rem 0;
+    box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.5);
 }
 
 .div-central-main-prova-tipo h1 {

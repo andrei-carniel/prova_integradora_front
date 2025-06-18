@@ -63,12 +63,10 @@ export default function ExamCreate() {
 
             if (response.ok) {
                 setMessage('Prova criada com sucesso!');
-                console.log(result);
             } else {
                 setMessage('Erro: ' + result.message);
             }
         } catch (error) {
-            console.error('Erro ao conectar com o servidor:', error);
             setMessage('Erro ao conectar com o servidor.');
         }
     };

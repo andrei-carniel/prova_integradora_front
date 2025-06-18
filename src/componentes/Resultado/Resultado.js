@@ -38,7 +38,6 @@ export default function Resultado() {
         setCorrectQuestions(correctAnswers)
         setQuestionsLength(questionslength)
       } catch (e) {
-        console.log('erro')
       }
     }
 

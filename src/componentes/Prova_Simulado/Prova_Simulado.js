@@ -18,6 +18,7 @@ export default function ProvaSimulado({ examId: propExamId, valid }) {
     const [respostas, setRespostas] = useState({});
     const [confirmar, setConfirmar] = useState(false)
     const respostasValidas = Object.values(respostas).filter(r => r !== null && r !== '').length;
+    const [hour, setHour] = useState(null)
 
     useEffect(() => {
         async function getData() {
@@ -36,20 +37,50 @@ export default function ProvaSimulado({ examId: propExamId, valid }) {
                     setError(errorData.message || 'Erro ao fazer login.');
                     return;
                 }
-
                 const dataIdUm = await response.json();
-
                 setData(dataIdUm);
-                console.log(dataIdUm);
+
+                const examEndFormat = () => {
+                    let slicedItens = dataIdUm.exam_list[0].student_end_date.split(' ');
+                    return slicedItens;
+                };
+
+                const [nameE, dayE, monthE, yearE, hourE, GMTE] = examEndFormat();
+
+                const HourEndFormated = hourE.split(':').slice(0, 2).join(':');
+                setHour(HourEndFormated)
             } catch (error) {
-                alert("Erro: " + error)
-                console.error('Erro na requisição:', error);
                 setError('Erro ao conectar com o servidor.');
             }
         }
 
         getData();
     }, [student_id, token, examIdNumber]);
+
+    useEffect(() => {
+        if (!hour) return; // impede erro se hour for null
+
+        const verificarHorario = setInterval(() => {
+            const agora = new Date();
+            const horaAtualMinutos = agora.getHours() * 60 + agora.getMinutes();
+
+            if (typeof hour === 'string' && hour.includes(':')) {
+                const [horaE, minutoE] = hour.split(':').map(Number);
+                // const horaFinalMinutos = horaE * 60 + minutoE;
+                const horaFinalMinutos = 1009
+
+                if (horaAtualMinutos >= horaFinalMinutos) {
+                    clearInterval(verificarHorario);
+                    finalizarProva();
+                }
+
+                console.log(`Atual: ${horaAtualMinutos} | Final: ${horaFinalMinutos}`);
+            }
+        }, 1000);
+
+        return () => clearInterval(verificarHorario);
+    }, [hour]);
+
 
     useEffect(() => {
         if (tempoRestante > 0) {
@@ -61,7 +92,23 @@ export default function ProvaSimulado({ examId: propExamId, valid }) {
         } else {
             finalizarProva();
         }
+
     }, [tempoRestante]);
+
+    useEffect(() => {
+        const handleVisibilityChange = () => {
+            if (document.hidden) {
+                navigate(`/ProvaLobby/${examIdNumber}`);
+            }
+        };
+
+        document.addEventListener('visibilitychange', handleVisibilityChange);
+
+        return () => {
+            document.removeEventListener('visibilitychange', handleVisibilityChange);
+        };
+    }, [examIdNumber, navigate]);
+
 
     const formatarTempo = (segundos) => {
         const minutos = Math.floor(segundos / 60);
@@ -90,24 +137,14 @@ export default function ProvaSimulado({ examId: propExamId, valid }) {
             });
             if (!response.ok) {
                 const errorData = await response.text();
-                console.error('Erro ao enviar respostas:', response.status, errorData);
-                alert('Responda todas as questões');
                 return;
             }
 
         } catch (error) {
-            console.error('Erro ao enviar respostas:', error);
-            alert('Erro ao enviar respostas.');
         }
 
-        if (document.fullscreenElement) {
-            document.exitFullscreen().catch((err) => {
-                console.error('Erro ao sair do fullscreen:', err);
-            });
-        }
 
         navigate(`/Resultado/${examIdNumber}`);
-        console.log(respostasFormatadas)
     };
 
     const handleRespostaChange = (questionId, answer) => {
@@ -140,6 +177,8 @@ export default function ProvaSimulado({ examId: propExamId, valid }) {
 
                     <span className='span-main-prova-simulado'>
                         {data.exam_list[0].name.toUpperCase()}
+                        <h1><strong>Atenção!</strong></h1>
+                        <span className='aviso-main-prova-simulado'>Sair da prova resultará na perda de todas as suas respostas.</span>
                     </span>
 
                     <div className='div-divs-main-prova-simulado'>

@@ -4,7 +4,6 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import LobbyMain from './componentes/Lobby/Lobby';
 import LoginMain from './componentes/Login/Login';
 import LobbyProvas from './componentes/Provas_Escolha/Provas_Escolha';
-import RecoverPassword from './componentes/Recuperar_Senha/Recuperar_Senha';
 import ProvaLobby from './componentes/Prova_Lobby/Prova_Lobby';
 import ProvaSimulado from './componentes/Prova_Simulado/Prova_Simulado';
 import Resultado from './componentes/Resultado/Resultado';
@@ -25,7 +24,6 @@ export default function App() {
                     <Route path='' element={<LoginMain />} />
                     <Route path='/Lobby' element={<LobbyMain />} />
                     <Route path='/Provas' element={<LobbyProvas />} />
-                    <Route path='/Recover' element={<RecoverPassword />} />
                     <Route path="/ProvaLobby/:examId" element={<ProvaLobby />} />
                     <Route path='/ProvaSimulado/:examId' element={<ProvaSimulado />} />
                     <Route path='/ResultadoSimulado/:examId' element={<ResultadoSimulado />} />
